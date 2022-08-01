@@ -89,6 +89,7 @@ public class TechJobs {
 
             System.out.println("\n" + menuHeader);
 
+
             // Print available choices
             for (int j = 0; j < choiceKeys.length; j++) {
                 System.out.println("" + j + " - " + choices.get(choiceKeys[j]));
@@ -120,6 +121,21 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        if (someJobs.isEmpty()) {
+            System.out.printf("No Results");
+        }
+
+        for (HashMap<String, String> job : someJobs) {
+
+            // Print out a job type and it's corresponding value
+
+            System.out.println("\n*****");
+
+            for (Map.Entry<String, String> thisJob : job.entrySet()) {
+                System.out.println(thisJob.getKey() + ": " + thisJob.getValue());
+            }
+            System.out.println("*****");
+        }
+
     }
 }
